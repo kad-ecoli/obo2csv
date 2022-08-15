@@ -48,7 +48,7 @@ size_t obo2csv(const string &inputfilename, const string &is_a_filename,
     bool termStart=false;
     ifstream fin;
     ofstream fout;
-    fin.open(inputfilename.c_str());
+    if (!fromStdin) fin.open(inputfilename.c_str());
     while((fromStdin)?cin.good():fin.good())
     {
         if (fromStdin) getline(cin,line);
@@ -274,5 +274,10 @@ int main(int argc,char **argv)
 
     cerr<<obo2csv(inputfilename, is_a_filename,
         name_filename, alt_id_filename)<<" terms"<<endl;
+
+    string ().swap(inputfilename);
+    string ().swap(is_a_filename);
+    string ().swap(name_filename);
+    string ().swap(alt_id_filename);
     return 0;
 }
