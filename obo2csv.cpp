@@ -272,7 +272,7 @@ int main(int argc,char **argv)
     string name_filename  =argv[3];
     string alt_id_filename=argv[4];
 
-    cout<<obo2csv(inputfilename, is_a_filename,
+    cerr<<obo2csv(inputfilename, is_a_filename,
         name_filename, alt_id_filename)<<" terms"<<endl;
     return 0;
 }
