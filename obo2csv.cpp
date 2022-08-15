@@ -1,5 +1,5 @@
 const char* docstring="\n"
-"obo2csv go.obo is_a.csv name.csv alt_id.csv has_a.csv\n"
+"obo2csv go.obo is_a.csv name.csv alt_id.csv\n"
 "    convert obo format ontology definition to tab-delimited text\n"
 "\n"
 "Input:\n"
