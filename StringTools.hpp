@@ -26,13 +26,15 @@ using namespace std;
  * line_vec      - output vector 
  * delimiter     - delimiter */
 void Split(const string &line, vector<string> &line_vec,
-    const char delimiter=' ')
+    const char delimiter=' ',const bool long_delimiter=true)
 {
     bool within_word = false;
     for (size_t pos=0;pos<line.size();pos++)
     {
         if (line[pos]==delimiter)
         {
+            if (!long_delimiter && within_word == false)
+                line_vec.push_back("");
             within_word = false;
             continue;
         }

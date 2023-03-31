@@ -23,3 +23,18 @@ Input:
 
 Output:
     output.txt - list of input GO terms and their parent terms
+
+*************************************************
+
+curate_GAF goinput.txt is_a.csv alt_id.csv output.txt
+    back-propagate parent GO terms for the list of input GO terms
+
+Input:
+    input.txt  - list of input GO terms. GO terms separated by comma in
+                 the same line will be back-propagate together. GO terms
+                 at differnet lines will be be back-propagated separately.
+    is_a.csv   - GO_ID Aspect is_a_direct is_a_indirect
+    alt_id.csv - alt_id GO_ID
+
+Output:
+    output.txt - list of input GO terms and their parent terms
