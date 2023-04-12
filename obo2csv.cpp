@@ -103,7 +103,7 @@ size_t obo2csv(const string &inputfilename, const string &is_a_filename,
         else if (line=="is_obsolete: true")
             obsolete_list.push_back(GOterm);
     }
-    if (fromStdin) fin.close();
+    if (!fromStdin) fin.close();
 
     /* write name */
     txt="";

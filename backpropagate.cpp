@@ -35,7 +35,7 @@ void parse_alt_id_file(const string &alt_id_filename,
         alt_id_dict[line_vec[0]]=line_vec[1];
         line_vec[0].clear(); line_vec[1].clear(); line_vec.clear();
     }
-    if (fromStdin) fin.close();
+    if (!fromStdin) fin.close();
     vector<string> ().swap(line_vec);
     string ().swap(line);
 }
@@ -77,7 +77,7 @@ void parse_is_a_file(const string &is_a_filename,
         is_a_indirect.clear();
         is_a_dict[GOterm].push_back(GOterm);
     }
-    if (fromStdin) fin.close();
+    if (!fromStdin) fin.close();
     vector<string> ().swap(line_vec);
     string ().swap(line);
     string ().swap(GOterm);
@@ -141,7 +141,7 @@ void backpropagate(const string &inputfilename,
         for (i=0;i<GOterm_list.size();i++) GOterm_list[i].clear();
         GOterm_list.clear();
     }
-    if (fromStdin) fin.close();
+    if (!fromStdin) fin.close();
     
     if (outputfilename=="-") cout<<txt<<flush;
     else
